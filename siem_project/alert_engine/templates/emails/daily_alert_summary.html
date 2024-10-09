@@ -1,0 +1,27 @@
+<!-- alert_engine/templates/emails/daily_alert_summary.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Alert Summary</title>
+</head>
+<body>
+    <h1>Daily Alert Summary for {{ date }}</h1>
+    
+    {% if alerts %}
+        <h2>Alerts:</h2>
+        <ul>
+        {% for alert in alerts %}
+            <li>
+                <strong>{{ alert.title }}</strong> (Severity: {{ alert.get_severity_display }})
+                <br>
+                {{ alert.description }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No alerts were generated in the past 24 hours.</p>
+    {% endif %}
+</body>
+</html>

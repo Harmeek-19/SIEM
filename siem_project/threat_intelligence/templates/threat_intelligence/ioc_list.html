@@ -1,0 +1,26 @@
+<html></html>
+<head>
+    <title>IOC List</title>
+</head>
+<body>
+    <h1>Recent IOCs</h1>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Threat Type</th>
+            <th>Last Seen</th>
+            <th>Tags</th>
+        </tr>
+        {% for ioc in iocs %}
+        <tr>
+            <td>{{ ioc.ioc_type }}</td>
+            <td>{{ ioc.value }}</td>
+            <td>{{ ioc.threat_type }}</td>
+            <td>{{ ioc.last_seen }}</td>
+            <td>{{ ioc.tags }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

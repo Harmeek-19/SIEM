@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIEM Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>SIEM Dashboard</h1>
+    
+    <div>
+        <h2>Overview</h2>
+        <p>Total IOCs: {{ ioc_count }}</p>
+        <p>Total Security Events: {{ event_count }}</p>
+    </div>
+
+    <div>
+        <h2>Recent Security Events</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Event Type</th>
+                    <th>Severity</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in recent_events %}
+                <tr>
+                    <td>{{ event.timestamp }}</td>
+                    <td>{{ event.event_type }}</td>
+                    <td>{{ event.severity }}</td>
+                    <td>{{ event.description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h2>Event Severity Distribution</h2>
+        <canvas id="severityChart"></canvas>
+    </div>
+
+    <script>
+        // You'll need to pass this data from your view
+        var severityData = {
+            labels: ['Low', 'Medium', 'High', 'Critical'],
+            datasets: [{
+                data: [30, 50, 15, 5], // Replace with actual data
+                backgroundColor: ['#4CAF50', '#FFC107', '#FF9800', '#F44336']
+            }]
+        };
+
+        var ctx = document.getElementById('severityChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: severityData
+        });
+    </script>
+</body>
+</html>

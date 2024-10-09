@@ -1,0 +1,345 @@
+/home/harmeek/Dev/Archive/siem_project
+├── alert_engine
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── management
+│   │   └── commands
+│   │       ├── create_alert_notifications.py
+│   │       ├── create_sample_alert_rules.py
+│   │       └── __pycache__
+│   │           ├── create_alert_notifications.cpython-312.pyc
+│   │           └── create_sample_alert_rules.cpython-312.pyc
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-310.pyc
+│   │       ├── 0001_initial.cpython-312.pyc
+│   │       ├── 0002_initial.cpython-310.pyc
+│   │       ├── 0002_initial.cpython-312.pyc
+│   │       ├── 0003_alter_alertrule_severity.cpython-312.pyc
+│   │       ├── 0004_alert_severity.cpython-312.pyc
+│   │       ├── 0005_alter_alert_severity_alter_alertrule_severity.cpython-312.pyc
+│   │       ├── 0005_convert_all_severities_to_int.cpython-312.pyc
+│   │       ├── 0006_change_severity_fields_to_integer.cpython-312.pyc
+│   │       ├── 0006_convert_severity_to_int.cpython-312.pyc
+│   │       ├── 0007_add_fields_to_alert.cpython-312.pyc
+│   │       ├── 0007_alert_created_at_alert_description_alert_title.cpython-312.pyc
+│   │       ├── 0007_alert_description_alert_title.cpython-312.pyc
+│   │       ├── 0008_alertnotification_delete_notification.cpython-312.pyc
+│   │       ├── 0008_remove_alert_created_at.cpython-312.pyc
+│   │       ├── 0009_alter_alertnotification_severity_level.cpython-312.pyc
+│   │       ├── __init__.cpython-310.pyc
+│   │       └── __init__.cpython-312.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-310.pyc
+│   │   ├── admin.cpython-312.pyc
+│   │   ├── apps.cpython-310.pyc
+│   │   ├── apps.cpython-312.pyc
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── models.cpython-310.pyc
+│   │   ├── models.cpython-312.pyc
+│   │   ├── scheduler.cpython-310.pyc
+│   │   ├── scheduler.cpython-312.pyc
+│   │   ├── serializers.cpython-312.pyc
+│   │   ├── signals.cpython-310.pyc
+│   │   ├── signals.cpython-312.pyc
+│   │   ├── tasks.cpython-310.pyc
+│   │   ├── tasks.cpython-312.pyc
+│   │   ├── tests.cpython-312.pyc
+│   │   ├── urls.cpython-312.pyc
+│   │   └── views.cpython-312.pyc
+│   ├── scheduler.py
+│   ├── serializers.py
+│   ├── signals.py
+│   ├── tasks.py
+│   ├── templates
+│   │   └── emails
+│   │       └── alert_email.html
+│   ├── tests.py
+│   ├── urls.py
+│   ├── utils.py
+│   └── views.py
+├── api
+│   ├── admin.py
+│   ├── apps.py
+│   ├── consumers.py
+│   ├── __init__.py
+│   ├── management
+│   │   └── commands
+│   │       ├── print_urls.py
+│   │       └── __pycache__
+│   │           └── print_urls.cpython-312.pyc
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-310.pyc
+│   │       ├── 0001_initial.cpython-312.pyc
+│   │       ├── 0002_delete_user.cpython-310.pyc
+│   │       ├── 0002_delete_user.cpython-312.pyc
+│   │       ├── 0002_user_address_user_phone_number.cpython-312.pyc
+│   │       ├── 0003_remove_api_alert.cpython-312.pyc
+│   │       ├── __init__.cpython-310.pyc
+│   │       └── __init__.cpython-312.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-310.pyc
+│   │   ├── admin.cpython-312.pyc
+│   │   ├── apps.cpython-310.pyc
+│   │   ├── apps.cpython-312.pyc
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── models.cpython-310.pyc
+│   │   ├── models.cpython-312.pyc
+│   │   ├── serializers.cpython-310.pyc
+│   │   ├── serializers.cpython-312.pyc
+│   │   ├── tests.cpython-312.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   ├── urls.cpython-312.pyc
+│   │   ├── views.cpython-310.pyc
+│   │   └── views.cpython-312.pyc
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── authentication
+│   ├── admin.py
+│   ├── apps.py
+│   ├── custom_auth.py
+│   ├── __init__.py
+│   ├── management
+│   │   └── commands
+│   │       ├── check_system_user.py
+│   │       ├── create_auth_tokens.py
+│   │       ├── __pycache__
+│   │       │   ├── check_system_user.cpython-312.pyc
+│   │       │   ├── create_auth_tokens.cpython-312.pyc
+│   │       │   ├── create_system_user.cpython-312.pyc
+│   │       │   └── setup_system_user.cpython-312.pyc
+│   │       └── setup_system_user.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-310.pyc
+│   │       ├── 0001_initial.cpython-312.pyc
+│   │       ├── 0002_customuser_is_verified.cpython-310.pyc
+│   │       ├── 0002_customuser_is_verified.cpython-312.pyc
+│   │       ├── 0003_customuser_role.cpython-312.pyc
+│   │       ├── __init__.cpython-310.pyc
+│   │       └── __init__.cpython-312.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-310.pyc
+│   │   ├── admin.cpython-312.pyc
+│   │   ├── apps.cpython-310.pyc
+│   │   ├── apps.cpython-312.pyc
+│   │   ├── custom_auth.cpython-310.pyc
+│   │   ├── custom_auth.cpython-312.pyc
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── models.cpython-310.pyc
+│   │   ├── models.cpython-312.pyc
+│   │   ├── serializers.cpython-310.pyc
+│   │   ├── serializers.cpython-312.pyc
+│   │   ├── tests.cpython-312.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   ├── urls.cpython-312.pyc
+│   │   ├── views.cpython-310.pyc
+│   │   └── views.cpython-312.pyc
+│   ├── serializers.py
+│   ├── templates
+│   │   └── authentication
+│   │       └── email_verification_result.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── celerybeat-schedule.bak
+├── celerybeat-schedule.dat
+├── celerybeat-schedule.dir
+├── dashboard
+│   ├── admin.py
+│   ├── apps.py
+│   ├── consumers.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       └── __init__.cpython-312.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-312.pyc
+│   │   ├── apps.cpython-312.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── models.cpython-312.pyc
+│   │   └── tests.cpython-312.pyc
+│   ├── routing.py
+│   ├── templates
+│   │   └── dashboard
+│   │       ├── dashboard.html
+│   │       └── home.html
+│   ├── tests.py
+│   └── views.py
+├── data_processing
+│   ├── admin.py
+│   ├── anomaly_detection.py
+│   ├── apps.py
+│   ├── correlation_engine.py
+│   ├── __init__.py
+│   ├── log_collector.py
+│   ├── management
+│   │   └── commands
+│   │       └── create_sample_security_events.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-310.pyc
+│   │       ├── 0001_initial.cpython-312.pyc
+│   │       ├── 0002_remove_processeddata_enriched_data_and_more.cpython-310.pyc
+│   │       ├── 0002_remove_processeddata_enriched_data_and_more.cpython-312.pyc
+│   │       ├── 0003_alter_securityevent_event_type.cpython-312.pyc
+│   │       ├── 0004_report.cpython-312.pyc
+│   │       ├── __init__.cpython-310.pyc
+│   │       └── __init__.cpython-312.pyc
+│   ├── models.py
+│   ├── __pycache__
+│   │   ├── admin.cpython-310.pyc
+│   │   ├── admin.cpython-312.pyc
+│   │   ├── anomaly_detection.cpython-310.pyc
+│   │   ├── anomaly_detection.cpython-312.pyc
+│   │   ├── apps.cpython-310.pyc
+│   │   ├── apps.cpython-312.pyc
+│   │   ├── correlation_engine.cpython-312.pyc
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── log_collector.cpython-312.pyc
+│   │   ├── models.cpython-310.pyc
+│   │   ├── models.cpython-312.pyc
+│   │   ├── serializers.cpython-310.pyc
+│   │   ├── serializers.cpython-312.pyc
+│   │   ├── signals.cpython-310.pyc
+│   │   ├── signals.cpython-312.pyc
+│   │   ├── tasks.cpython-310.pyc
+│   │   ├── tasks.cpython-312.pyc
+│   │   ├── tests.cpython-312.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   ├── urls.cpython-312.pyc
+│   │   ├── utils.cpython-312.pyc
+│   │   ├── views.cpython-310.pyc
+│   │   └── views.cpython-312.pyc
+│   ├── serializers.py
+│   ├── signals.py
+│   ├── tasks.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── utils.py
+│   └── views.py
+├── directory-backend.txt
+├── last_log_timestamps.json
+├── manage.py
+├── redis_test.py
+├── siem_project
+│   ├── asgi.py
+│   ├── celery.py
+│   ├── __init__.py
+│   ├── management
+│   │   └── commands
+│   ├── permissions.py
+│   ├── __pycache__
+│   │   ├── celery.cpython-310.pyc
+│   │   ├── celery.cpython-312.pyc
+│   │   ├── __init__.cpython-310.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── permissions.cpython-312.pyc
+│   │   ├── settings.cpython-310.pyc
+│   │   ├── settings.cpython-312.pyc
+│   │   ├── urls.cpython-310.pyc
+│   │   ├── urls.cpython-312.pyc
+│   │   ├── wsgi.cpython-310.pyc
+│   │   └── wsgi.cpython-312.pyc
+│   ├── routing.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── threat_intelligence
+    ├── admin.py
+    ├── apps.py
+    ├── __init__.py
+    ├── management
+    │   └── commands
+    │       ├── clear_all_iocs.py
+    │       ├── clear_old_iocs.py
+    │       ├── __pycache__
+    │       │   ├── clear_all_iocs.cpython-312.pyc
+    │       │   ├── clear_old_iocs.cpython-312.pyc
+    │       │   ├── reassign_iocs.cpython-312.pyc
+    │       │   ├── setup_threat_intel.cpython-310.pyc
+    │       │   ├── test_siem.cpython-312.pyc
+    │       │   └── update_threat_feeds.cpython-310.pyc
+    │       ├── reassign_iocs.py
+    │       ├── setup_threat_intel.py
+    │       ├── test_siem.py
+    │       └── update_threat_feeds.py
+    ├── migrations
+    │   ├── 0001_initial.py
+    │   ├── __init__.py
+    │   └── __pycache__
+    │       ├── 0001_initial.cpython-310.pyc
+    │       ├── 0001_initial.cpython-312.pyc
+    │       ├── 0002_alter_ioc_threat_type_alter_ioc_value.cpython-310.pyc
+    │       ├── 0002_alter_ioc_threat_type_alter_ioc_value.cpython-312.pyc
+    │       ├── 0002_alter_threatindicator_source_and_more.cpython-310.pyc
+    │       ├── 0002_alter_threatindicator_source_and_more.cpython-312.pyc
+    │       ├── 0003_alter_ioc_source_alter_ioc_threat_type_and_more.cpython-310.pyc
+    │       ├── 0003_alter_ioc_source_alter_ioc_threat_type_and_more.cpython-312.pyc
+    │       ├── 0003_threatfeed.cpython-310.pyc
+    │       ├── 0003_threatfeed.cpython-312.pyc
+    │       ├── 0004_alter_ioc_value.cpython-310.pyc
+    │       ├── 0004_alter_ioc_value.cpython-312.pyc
+    │       ├── 0005_ioc_description_ioc_external_reference_ioc_tags_and_more.cpython-310.pyc
+    │       ├── 0005_ioc_description_ioc_external_reference_ioc_tags_and_more.cpython-312.pyc
+    │       ├── 0006_ioc_user.cpython-312.pyc
+    │       ├── 0007_alter_ioc_user.cpython-312.pyc
+    │       ├── __init__.cpython-310.pyc
+    │       └── __init__.cpython-312.pyc
+    ├── models.py
+    ├── __pycache__
+    │   ├── admin.cpython-310.pyc
+    │   ├── admin.cpython-312.pyc
+    │   ├── apps.cpython-310.pyc
+    │   ├── apps.cpython-312.pyc
+    │   ├── __init__.cpython-310.pyc
+    │   ├── __init__.cpython-312.pyc
+    │   ├── models.cpython-310.pyc
+    │   ├── models.cpython-312.pyc
+    │   ├── serializers.cpython-310.pyc
+    │   ├── serializers.cpython-312.pyc
+    │   ├── services.cpython-310.pyc
+    │   ├── services.cpython-312.pyc
+    │   ├── signals.cpython-310.pyc
+    │   ├── signals.cpython-312.pyc
+    │   ├── tasks.cpython-310.pyc
+    │   ├── tasks.cpython-312.pyc
+    │   ├── tests.cpython-312.pyc
+    │   ├── urls.cpython-310.pyc
+    │   ├── urls.cpython-312.pyc
+    │   ├── views.cpython-310.pyc
+    │   └── views.cpython-312.pyc
+    ├── serializers.py
+    ├── services.py
+    ├── signals.py
+    ├── tasks.py
+    ├── templates
+    │   └── threat_intelligence
+    │       └── ioc_list.html
+    ├── tests.py
+    ├── urls.py
+    └── views.py
+
+51 directories, 292 files

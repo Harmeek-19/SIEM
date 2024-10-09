@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIEM Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>SIEM Dashboard</h1>
+    <div>
+        <h2>Recent Events</h2>
+        <ul id="recent-events"></ul>
+    </div>
+    <div>
+        <h2>Event Summary</h2>
+        <canvas id="event-summary-chart"></canvas>
+    </div>
+
+    <script>
+        const socket = new WebSocket('ws://' + window.location.host + '/ws/dashboard/');
+
+        socket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            if (data.action === 'recent_events') {
+                updateRecentEvents(data.events);
+            } else if (data.action === 'event_summary') {
+                updateEventSummary(data.summary);
+            }
+        };
+
+        function updateRecentEvents(events) {
+            const eventList = document.getElementById('recent-events');
+            eventList.innerHTML = '';
+            events.forEach(event => {
+                const li = document.createElement('li');
+                li.textContent = `${event.event_type} - Severity: ${event.severity} - ${new Date(event.timestamp).toLocaleString()}`;
+                eventList.appendChild(li);
+            });
+        }
+
+        function updateEventSummary(summary) {
+            const ctx = document.getElementById('event-summary-chart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: summary.map(item => item.event_type),
+                    datasets: [{
+                        label: 'Event Count',
+                        data: summary.map(item => item.count),
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Request initial data
+        socket.onopen = function(e) {
+            socket.send(JSON.stringify({action: 'get_recent_events'}));
+            socket.send(JSON.stringify({action: 'get_event_summary'}));
+        };
+
+        // Periodically request updates
+        setInterval(() => {
+            socket.send(JSON.stringify({action: 'get_recent_events'}));
+            socket.send(JSON.stringify({action: 'get_event_summary'}));
+        }, 30000);  // Update every 30 seconds
+    </script>
+</body>
+</html>
