@@ -70,7 +70,7 @@ Key Features:
 ### Steps
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/siem_project.git
+   git clone https://github.com/Harmeek-19/SIEM.git
    cd siem_project
    ```
 
@@ -81,12 +81,12 @@ Key Features:
 
 3. Run migrations for the Django backend:
    ```
-   docker-compose exec web python manage.py migrate
+   python manage.py migrate
    ```
 
 4. Create a superuser for Django admin:
    ```
-   docker-compose exec web python manage.py createsuperuser
+   python manage.py createsuperuser
    ```
 
 5. Access the application:
