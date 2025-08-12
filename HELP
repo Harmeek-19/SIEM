@@ -1,15 +1,40 @@
-C:\Users\E114963>aws configure list
-      Name                    Value             Type    Location
-      ----                    -----             ----    --------
-   profile                <not set>             None    None
-access_key     ****************TY5A shared-credentials-file
-secret_key     ****************Gssi shared-credentials-file
-    region                us-east-1      config-file    ~/.aws/config
+C:\Users\E114963>type %USERPROFILE%\.aws\credentials
+[default]
+aws_access_key_id = AKIA2VQANE7SZEL4TY5A
+aws_secret_access_key = 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
+[test-user]
+aws_access_key_id = AKIA2VQANE7S6UWV2LG4
+aws_secret_access_key = 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
+[test]
+aws_access_key_id = AKIA2VQANE7SQ322XB5W
+aws_secret_access_key = 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
 
-C:\Users\E114963>cat ~/.aws/credentials
-'cat' is not recognized as an internal or external command,
-operable program or batch file.
+C:\Users\E114963>type %USERPROFILE%\.aws\config
+[default]
+region = us-east-1
+[profile test-user]
+region = us-east-1
+[profile test]
+region = us-east-1
 
-C:\Users\E114963>cat /.aws/config
-'cat' is not recognized as an internal or external command,
-operable program or batch file.
+C:\Users\E114963>aws iam list-mfa-devices --user-name admin
+{
+    "MFADevices": [
+        {
+            "UserName": "admin",
+            "SerialNumber": "arn:aws:iam::733366527973:mfa/device-1",
+            "EnableDate": "2025-08-08T10:52:00+00:00"
+        }
+    ]
+}
+
+
+C:\Users\E114963>aws sts get-caller-identity
+{
+    "UserId": "AIDA2VQANE7S36P2CTFG7",
+    "Account": "733366527973",
+    "Arn": "arn:aws:iam::733366527973:user/admin"
+}
+
+
+C:\Users\E114963>
