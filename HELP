@@ -1,10 +1,15 @@
-C:\Users\E114963>aws iam list-mfa-devices --user-name admin
-{
-    "MFADevices": [
-        {
-            "UserName": "admin",
-            "SerialNumber": "arn:aws:iam::733366527973:mfa/device-1",
-            "EnableDate": "2025-08-08T10:52:00+00:00"
-        }
-    ]
-}
+C:\Users\E114963>aws configure list
+      Name                    Value             Type    Location
+      ----                    -----             ----    --------
+   profile                <not set>             None    None
+access_key     ****************TY5A shared-credentials-file
+secret_key     ****************Gssi shared-credentials-file
+    region                us-east-1      config-file    ~/.aws/config
+
+C:\Users\E114963>cat ~/.aws/credentials
+'cat' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\E114963>cat /.aws/config
+'cat' is not recognized as an internal or external command,
+operable program or batch file.
