@@ -1,0 +1,10 @@
+C:\Users\E114963>aws iam list-mfa-devices --user-name admin
+{
+    "MFADevices": [
+        {
+            "UserName": "admin",
+            "SerialNumber": "arn:aws:iam::733366527973:mfa/device-1",
+            "EnableDate": "2025-08-08T10:52:00+00:00"
+        }
+    ]
+}
