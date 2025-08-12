@@ -1,9 +1,16 @@
-C:\Users\E114963>aws sts get-session-token --serial-number arn:aws:iam::733366527973:mfa/device-1 --token-code 828446 --duration-seconds 43200
+C:\Users\E114963>aws --profile admin-base sts get-caller-identity
+{
+    "UserId": "AIDA2VQANE7S36P2CTFG7",
+    "Account": "733366527973",
+    "Arn": "arn:aws:iam::733366527973:user/admin"
+}
 
-An error occurred (InvalidClientTokenId) when calling the GetSessionToken operation: The security token included in the request is invalid.
 
-C:\Users\E114963>aws sts get-session-token --serial-number arn:aws:iam::733366527973:mfa/device-1 --token-code 981885 --duration-seconds 43200
+C:\Users\E114963>aws --profile admin-mfa sts get-caller-identity
+Enter MFA code for arn:aws:iam::733366527973:mfa/device-1:
+{
+    "UserId": "AROA2VQANE7STGEAS3VBI:botocore-session-1755004056",
+    "Account": "733366527973",
+    "Arn": "arn:aws:sts::733366527973:assumed-role/AdminRole-MFA/botocore-session-1755004056"
+}
 
-An error occurred (InvalidClientTokenId) when calling the GetSessionToken operation: The security token included in the request is invalid.
-
-C:\Users\E114963>
